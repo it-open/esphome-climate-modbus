@@ -1,0 +1,461 @@
+
+  # RW Pump_down :Type {{type}} on address: 1287
+  - platform: modbus_controller
+    name: "Pump_down"
+    id: Pump_down
+    address: 1287
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Pump_down).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Pump_down).state);
+    
+
+  # RW Remote_standby :Type {{type}} on address: 1288
+  - platform: modbus_controller
+    name: "Remote_standby"
+    id: Remote_standby
+    address: 1288
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Remote_standby).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Remote_standby).state);
+    
+
+  # RW Night_dig :Type {{type}} on address: 1291
+  - platform: modbus_controller
+    name: "Night_dig"
+    id: Night_dig
+    address: 1291
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Night_dig).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Night_dig).state);
+    
+
+  # RW Compressor_state :Type {{type}} on address: 1279
+  - platform: modbus_controller
+    name: "Compressor_state"
+    id: Compressor_state
+    address: 1279
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Compressor_state).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Compressor_state).state);
+    
+
+  # RW Compressor_prot_input :Type {{type}} on address: 1285
+  - platform: modbus_controller
+    name: "Compressor_prot_input"
+    id: Compressor_prot_input
+    address: 1285
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Compressor_prot_input).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Compressor_prot_input).state);
+    
+
+  # RW Defrost_state :Type {{type}} on address: 1280
+  - platform: modbus_controller
+    name: "Defrost_state"
+    id: Defrost_state
+    address: 1280
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Defrost_state).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Defrost_state).state);
+    
+
+  # RW Dripping_state :Type {{type}} on address: 1283
+  - platform: modbus_controller
+    name: "Dripping_state"
+    id: Dripping_state
+    address: 1283
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Dripping_state).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Dripping_state).state);
+    
+
+  # RW Remote_start_Defrost :Type {{type}} on address: 1289
+  - platform: modbus_controller
+    name: "Remote_start_Defrost"
+    id: Remote_start_Defrost
+    address: 1289
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Remote_start_Defrost).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Remote_start_Defrost).state);
+    
+
+  # RW Remote_stop_Defrost :Type {{type}} on address: 1290
+  - platform: modbus_controller
+    name: "Remote_stop_Defrost"
+    id: Remote_stop_Defrost
+    address: 1290
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Remote_stop_Defrost).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Remote_stop_Defrost).state);
+    
+
+  # RW Light_state :Type {{type}} on address: 1282
+  - platform: modbus_controller
+    name: "Light_state"
+    id: Light_state
+    address: 1282
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Light_state).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Light_state).state);
+    
+
+  # RW Door_state :Type {{type}} on address: 1284
+  - platform: modbus_controller
+    name: "Door_state"
+    id: Door_state
+    address: 1284
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Door_state).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Door_state).state);
+    
+
+  # RW Turn_on_light :Type {{type}} on address: 1536
+  - platform: modbus_controller
+    name: "Turn_on_light"
+    id: Turn_on_light
+    address: 1536
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Turn_on_light).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Turn_on_light).state);
+    
+
+  # RW Fans_state :Type {{type}} on address: 1281
+  - platform: modbus_controller
+    name: "Fans_state"
+    id: Fans_state
+    address: 1281
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Fans_state).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Fans_state).state);
+    
+
+  # RW E0_Ambient_error :Type {{type}} on address: 19999
+  - platform: modbus_controller
+    name: "E0_Ambient_error"
+    id: E0_Ambient_error
+    address: 19999
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(E0_Ambient_error).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(E0_Ambient_error).state);
+    
+
+  # RW E1_Defrost_error :Type {{type}} on address: 20000
+  - platform: modbus_controller
+    name: "E1_Defrost_error"
+    id: E1_Defrost_error
+    address: 20000
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(E1_Defrost_error).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(E1_Defrost_error).state);
+    
+
+  # RW EEPROM_error :Type {{type}} on address: 20001
+  - platform: modbus_controller
+    name: "EEPROM_error"
+    id: EEPROM_error
+    address: 20001
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(EEPROM_error).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(EEPROM_error).state);
+    
+
+  # RW Alarm_High_temp :Type {{type}} on address: 20002
+  - platform: modbus_controller
+    name: "Alarm_High_temp"
+    id: Alarm_High_temp
+    address: 20002
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Alarm_High_temp).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Alarm_High_temp).state);
+    
+
+  # RW Alarm_Low_temp :Type {{type}} on address: 20003
+  - platform: modbus_controller
+    name: "Alarm_Low_temp"
+    id: Alarm_Low_temp
+    address: 20003
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Alarm_Low_temp).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(Alarm_Low_temp).state);
+    
+
+  # RW ED_Door_open :Type {{type}} on address: 20004
+  - platform: modbus_controller
+    name: "ED_Door_open"
+    id: ED_Door_open
+    address: 20004
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(ED_Door_open).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(ED_Door_open).state);
+    
+
+  # RW E8_man_in_room :Type {{type}} on address: 20005
+  - platform: modbus_controller
+    name: "E8_man_in_room"
+    id: E8_man_in_room
+    address: 20005
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(E8_man_in_room).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(E8_man_in_room).state);
+    
+
+  # RW EC_Compromize_alarm :Type {{type}} on address: 20006
+  - platform: modbus_controller
+    name: "EC_Compromize_alarm"
+    id: EC_Compromize_alarm
+    address: 20006
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(EC_Compromize_alarm).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(EC_Compromize_alarm).state);
+    
+
+  # RW E9_Light_alarm :Type {{type}} on address: 20007
+  - platform: modbus_controller
+    name: "E9_Light_alarm"
+    id: E9_Light_alarm
+    address: 20007
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(E9_Light_alarm).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(E9_Light_alarm).state);
+    
+
+  # RW man_in_room :Type {{type}} on address: 1286
+  - platform: modbus_controller
+    name: "man_in_room"
+    id: man_in_room
+    address: 1286
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(man_in_room).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id(man_in_room).state);
+    
+

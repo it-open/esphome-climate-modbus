@@ -1,0 +1,21 @@
+   # RW {{varname}} :Type {{type}} on address: {{address}}
+  - platform: modbus_controller
+    id: {{varname}}_writing
+    address: {{address}}
+    register_type: coil
+    internal: true  
+
+  - platform: template
+    id: {{varname}}
+    name: {{varname}}
+    optimistic: true
+    on_turn_on:
+      then:
+        - switch.turn_on: {{varname}}_writing
+    on_turn_off:
+      then:
+        - switch.turn_off: {{varname}}_writing
+    
+    
+     
+ 

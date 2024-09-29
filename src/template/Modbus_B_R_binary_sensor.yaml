@@ -1,0 +1,8 @@
+  # RW {{varname}} :Type {{type}} on address: {{address}}
+  - platform: modbus_controller
+    name: "{{varname}}"
+    id: {{varname}}
+    address: {{address}}
+    register_type: read
+    
+

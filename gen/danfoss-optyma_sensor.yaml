@@ -1,0 +1,671 @@
+
+  # RW R0_differential :Type U_WORD on address: 769
+  - platform: modbus_controller
+    name: "R0_differential"
+    id: R0_differential_reading
+    address: 769
+    register_type: holding
+    value_type: U_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: R0_differential
+            value: !lambda 'return x;' 
+    
+  # RW A1_min :Type S_WORD on address: 774
+  - platform: modbus_controller
+    name: "A1_min"
+    id: A1_min_reading
+    address: 774
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: A1_min
+            value: !lambda 'return x;' 
+    
+  # RW A2_max :Type S_WORD on address: 775
+  - platform: modbus_controller
+    name: "A2_max"
+    id: A2_max_reading
+    address: 775
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: A2_max
+            value: !lambda 'return x;' 
+    
+  # RW ALD_Alarm_delay :Type S_WORD on address: 779
+  - platform: modbus_controller
+    name: "ALD_Alarm_delay"
+    id: ALD_Alarm_delay_reading
+    address: 779
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    accuracy_decimals: 1
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: ALD_Alarm_delay
+            value: !lambda 'return x;' 
+    
+  # RW CAL_Calibration :Type S_WORD on address: 781
+  - platform: modbus_controller
+    name: "CAL_Calibration"
+    id: CAL_Calibration_reading
+    address: 781
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: CAL_Calibration
+            value: !lambda 'return x;' 
+    
+  # RW LSE_min_setpoint :Type S_WORD on address: 786
+  - platform: modbus_controller
+    name: "LSE_min_setpoint"
+    id: LSE_min_setpoint_reading
+    address: 786
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: LSE_min_setpoint
+            value: !lambda 'return x;' 
+    
+  # RW HSE_max_setpoint :Type S_WORD on address: 787
+  - platform: modbus_controller
+    name: "HSE_max_setpoint"
+    id: HSE_max_setpoint_reading
+    address: 787
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: HSE_max_setpoint
+            value: !lambda 'return x;' 
+    
+  # RW nSC_night_diff :Type S_WORD on address: 794
+  - platform: modbus_controller
+    name: "nSC_night_diff"
+    id: nSC_night_diff_reading
+    address: 794
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: nSC_night_diff
+            value: !lambda 'return x;' 
+    
+  # RW C1_compress_delay :Type S_WORD on address: 780
+  - platform: modbus_controller
+    name: "C1_compress_delay"
+    id: C1_compress_delay_reading
+    address: 780
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: C1_compress_delay
+            value: !lambda 'return x;' 
+    
+  # RW CE1_on_compress_error :Type S_WORD on address: 792
+  - platform: modbus_controller
+    name: "CE1_on_compress_error"
+    id: CE1_on_compress_error_reading
+    address: 792
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    accuracy_decimals: 1
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: CE1_on_compress_error
+            value: !lambda 'return x;' 
+    
+  # RW CE2_off_compress_error :Type S_WORD on address: 793
+  - platform: modbus_controller
+    name: "CE2_off_compress_error"
+    id: CE2_off_compress_error_reading
+    address: 793
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    accuracy_decimals: 1
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: CE2_off_compress_error
+            value: !lambda 'return x;' 
+    
+  # RW D1_Defrost_type :Type S_WORD on address: 512
+  - platform: modbus_controller
+    name: "D1_Defrost_type"
+    id: D1_Defrost_type_reading
+    address: 512
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: D1_Defrost_type
+            value: !lambda 'return x;' 
+    
+  # RW D0_defrost :Type S_WORD on address: 769
+  - platform: modbus_controller
+    name: "D0_defrost"
+    id: D0_defrost_reading
+    address: 769
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: D0_defrost
+            value: !lambda 'return x;' 
+    
+  # RW D2_defrost_limit :Type S_WORD on address: 770
+  - platform: modbus_controller
+    name: "D2_defrost_limit"
+    id: D2_defrost_limit_reading
+    address: 770
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: D2_defrost_limit
+            value: !lambda 'return x;' 
+    
+  # RW D3_defrost_time :Type S_WORD on address: 771
+  - platform: modbus_controller
+    name: "D3_defrost_time"
+    id: D3_defrost_time_reading
+    address: 771
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    accuracy_decimals: 1
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: D3_defrost_time
+            value: !lambda 'return x;' 
+    
+  # RW D7_dripping_time :Type S_WORD on address: 772
+  - platform: modbus_controller
+    name: "D7_dripping_time"
+    id: D7_dripping_time_reading
+    address: 772
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: D7_dripping_time
+            value: !lambda 'return x;' 
+    
+  # RW F5_fan_pause :Type S_WORD on address: 773
+  - platform: modbus_controller
+    name: "F5_fan_pause"
+    id: F5_fan_pause_reading
+    address: 773
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: F5_fan_pause
+            value: !lambda 'return x;' 
+    
+  # RW F4_defrost_fan_state :Type S_WORD on address: 777
+  - platform: modbus_controller
+    name: "F4_defrost_fan_state"
+    id: F4_defrost_fan_state_reading
+    address: 777
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: F4_defrost_fan_state
+            value: !lambda 'return x;' 
+    
+  # RW DE_defrost_probe_enable :Type S_WORD on address: 778
+  - platform: modbus_controller
+    name: "DE_defrost_probe_enable"
+    id: DE_defrost_probe_enable_reading
+    address: 778
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: DE_defrost_probe_enable
+            value: !lambda 'return x;' 
+    
+  # RW DPO_defrost_power_on :Type S_WORD on address: 779
+  - platform: modbus_controller
+    name: "DPO_defrost_power_on"
+    id: DPO_defrost_power_on_reading
+    address: 779
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: DPO_defrost_power_on
+            value: !lambda 'return x;' 
+    
+  # RW DSE_smart_defrost :Type S_WORD on address: 790
+  - platform: modbus_controller
+    name: "DSE_smart_defrost"
+    id: DSE_smart_defrost_reading
+    address: 790
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: DSE_smart_defrost
+            value: !lambda 'return x;' 
+    
+  # RW DST_smart_defrost_temp :Type S_WORD on address: 790
+  - platform: modbus_controller
+    name: "DST_smart_defrost_temp"
+    id: DST_smart_defrost_temp_reading
+    address: 790
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: DST_smart_defrost_temp
+            value: !lambda 'return x;' 
+    
+  # RW Turn_on_defrost :Type S_WORD on address: 1012
+  - platform: modbus_controller
+    name: "Turn_on_defrost"
+    id: Turn_on_defrost_reading
+    address: 1012
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: Turn_on_defrost
+            value: !lambda 'return x;' 
+    
+  # RW Input_1_setting :Type S_WORD on address: 514
+  - platform: modbus_controller
+    name: "Input_1_setting"
+    id: Input_1_setting_reading
+    address: 514
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: Input_1_setting
+            value: !lambda 'return x;' 
+    
+  # RW Input_2_setting :Type S_WORD on address: 515
+  - platform: modbus_controller
+    name: "Input_2_setting"
+    id: Input_2_setting_reading
+    address: 515
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: Input_2_setting
+            value: !lambda 'return x;' 
+    
+  # RW Aux_1_control :Type S_WORD on address: 516
+  - platform: modbus_controller
+    name: "Aux_1_control"
+    id: Aux_1_control_reading
+    address: 516
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: Aux_1_control
+            value: !lambda 'return x;' 
+    
+  # RW Aux_2_control :Type S_WORD on address: 517
+  - platform: modbus_controller
+    name: "Aux_2_control"
+    id: Aux_2_control_reading
+    address: 517
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: Aux_2_control
+            value: !lambda 'return x;' 
+    
+  # RW DQC_door_open :Type S_WORD on address: 782
+  - platform: modbus_controller
+    name: "DQC_door_open"
+    id: DQC_door_open_reading
+    address: 782
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: DQC_door_open
+            value: !lambda 'return x;' 
+    
+  # RW TDO_door_open :Type S_WORD on address: 783
+  - platform: modbus_controller
+    name: "TDO_door_open"
+    id: TDO_door_open_reading
+    address: 783
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    accuracy_decimals: 1
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: TDO_door_open
+            value: !lambda 'return x;' 
+    
+  # RW STA_Aux_temp :Type S_WORD on address: 788
+  - platform: modbus_controller
+    name: "STA_Aux_temp"
+    id: STA_Aux_temp_reading
+    address: 788
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: STA_Aux_temp
+            value: !lambda 'return x;' 
+    
+  # RW BEE_Buzzer_enable :Type S_WORD on address: 795
+  - platform: modbus_controller
+    name: "BEE_Buzzer_enable"
+    id: BEE_Buzzer_enable_reading
+    address: 795
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: BEE_Buzzer_enable
+            value: !lambda 'return x;' 
+    
+  # RW F3_fan_state :Type S_WORD on address: 776
+  - platform: modbus_controller
+    name: "F3_fan_state"
+    id: F3_fan_state_reading
+    address: 776
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: F3_fan_state
+            value: !lambda 'return x;' 
+    
+  # RW FST_Fan_stop :Type S_WORD on address: 784
+  - platform: modbus_controller
+    name: "FST_Fan_stop"
+    id: FST_Fan_stop_reading
+    address: 784
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: FST_Fan_stop
+            value: !lambda 'return x;' 
+    
+  # RW FD_Fan_stop_diff :Type S_WORD on address: 787
+  - platform: modbus_controller
+    name: "FD_Fan_stop_diff"
+    id: FD_Fan_stop_diff_reading
+    address: 787
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: FD_Fan_stop_diff
+            value: !lambda 'return x;' 
+    
+  # RW F6_fans_recir_on :Type S_WORD on address: 796
+  - platform: modbus_controller
+    name: "F6_fans_recir_on"
+    id: F6_fans_recir_on_reading
+    address: 796
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    accuracy_decimals: 1
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: F6_fans_recir_on
+            value: !lambda 'return x;' 
+    
+  # RW F7_fans_recir_off :Type S_WORD on address: 797
+  - platform: modbus_controller
+    name: "F7_fans_recir_off"
+    id: F7_fans_recir_off_reading
+    address: 797
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    accuracy_decimals: 1
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: F7_fans_recir_off
+            value: !lambda 'return x;' 
+    
+  # RW Ambient_temp :Type S_WORD on address: 255
+  - platform: modbus_controller
+    name: "Ambient_temp"
+    id: Ambient_temp_reading
+    address: 255
+    register_type: read
+    accuracy_decimals: 1
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    
+    
+  # RW Evapor_temp :Type S_WORD on address: 256
+  - platform: modbus_controller
+    name: "Evapor_temp"
+    id: Evapor_temp_reading
+    address: 256
+    register_type: read
+    accuracy_decimals: 1
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    
+    
+  # RW Setpoint :Type S_WORD on address: 797
+  - platform: modbus_controller
+    name: "Setpoint"
+    id: Setpoint_reading
+    address: 797
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 0.1
+    accuracy_decimals: 1
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: Setpoint
+            value: !lambda 'return x;' 
+    
+  # RW Turn_on_standby :Type S_WORD on address: 1535
+  - platform: modbus_controller
+    name: "Turn_on_standby"
+    id: Turn_on_standby_reading
+    address: 1535
+    register_type: holding
+    value_type: S_WORD
+    filters:
+      - multiply: 1
+    accuracy_decimals: 0
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: Turn_on_standby
+            value: !lambda 'return x;' 
+    

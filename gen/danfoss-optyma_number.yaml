@@ -1,0 +1,989 @@
+
+   # RW R0_differential :Type U_WORD on address: 769
+  - platform: modbus_controller
+    id: R0_differential_writing
+    address: 769
+    register_type: holding
+    value_type: U_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: R0_differential
+    name: R0_differential
+    min_value: 2
+    max_value: 100
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: R0_differential_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW A1_min :Type S_WORD on address: 774
+  - platform: modbus_controller
+    id: A1_min_writing
+    address: 774
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: A1_min
+    name: A1_min
+    min_value: -45
+    max_value: 99
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: A1_min_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW A2_max :Type S_WORD on address: 775
+  - platform: modbus_controller
+    id: A2_max_writing
+    address: 775
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: A2_max
+    name: A2_max
+    min_value: -45
+    max_value: 99
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: A2_max_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW ALD_Alarm_delay :Type S_WORD on address: 779
+  - platform: modbus_controller
+    id: ALD_Alarm_delay_writing
+    address: 779
+    register_type: holding
+    value_type: S_WORD
+    multiply: 10.0
+    internal: true  
+
+  - platform: template
+    id: ALD_Alarm_delay
+    name: ALD_Alarm_delay
+    min_value: 0
+    max_value: 240
+    step: 0.1
+    unit_of_measurement: s
+    device_class: duration
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: ALD_Alarm_delay_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW CAL_Calibration :Type S_WORD on address: 781
+  - platform: modbus_controller
+    id: CAL_Calibration_writing
+    address: 781
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: CAL_Calibration
+    name: CAL_Calibration
+    min_value: -100
+    max_value: 100
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: CAL_Calibration_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW LSE_min_setpoint :Type S_WORD on address: 786
+  - platform: modbus_controller
+    id: LSE_min_setpoint_writing
+    address: 786
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: LSE_min_setpoint
+    name: LSE_min_setpoint
+    min_value: -45
+    max_value: 99
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: LSE_min_setpoint_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW HSE_max_setpoint :Type S_WORD on address: 787
+  - platform: modbus_controller
+    id: HSE_max_setpoint_writing
+    address: 787
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: HSE_max_setpoint
+    name: HSE_max_setpoint
+    min_value: -45
+    max_value: 99
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: HSE_max_setpoint_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW nSC_night_diff :Type S_WORD on address: 794
+  - platform: modbus_controller
+    id: nSC_night_diff_writing
+    address: 794
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: nSC_night_diff
+    name: nSC_night_diff
+    min_value: -200
+    max_value: 200
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: nSC_night_diff_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW C1_compress_delay :Type S_WORD on address: 780
+  - platform: modbus_controller
+    id: C1_compress_delay_writing
+    address: 780
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: C1_compress_delay
+    name: C1_compress_delay
+    min_value: 0
+    max_value: 15
+    step: 1
+    unit_of_measurement: s
+    device_class: duration
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: C1_compress_delay_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW CE1_on_compress_error :Type S_WORD on address: 792
+  - platform: modbus_controller
+    id: CE1_on_compress_error_writing
+    address: 792
+    register_type: holding
+    value_type: S_WORD
+    multiply: 10.0
+    internal: true  
+
+  - platform: template
+    id: CE1_on_compress_error
+    name: CE1_on_compress_error
+    min_value: 0
+    max_value: 240
+    step: 0.1
+    unit_of_measurement: s
+    device_class: duration
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: CE1_on_compress_error_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW CE2_off_compress_error :Type S_WORD on address: 793
+  - platform: modbus_controller
+    id: CE2_off_compress_error_writing
+    address: 793
+    register_type: holding
+    value_type: S_WORD
+    multiply: 10.0
+    internal: true  
+
+  - platform: template
+    id: CE2_off_compress_error
+    name: CE2_off_compress_error
+    min_value: 5
+    max_value: 240
+    step: 0.1
+    unit_of_measurement: s
+    device_class: duration
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: CE2_off_compress_error_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW D1_Defrost_type :Type S_WORD on address: 512
+  - platform: modbus_controller
+    id: D1_Defrost_type_writing
+    address: 512
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: D1_Defrost_type
+    name: D1_Defrost_type
+    min_value: 0
+    max_value: 2
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: D1_Defrost_type_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW D0_defrost :Type S_WORD on address: 769
+  - platform: modbus_controller
+    id: D0_defrost_writing
+    address: 769
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: D0_defrost
+    name: D0_defrost
+    min_value: 0
+    max_value: 4
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: D0_defrost_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW D2_defrost_limit :Type S_WORD on address: 770
+  - platform: modbus_controller
+    id: D2_defrost_limit_writing
+    address: 770
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: D2_defrost_limit
+    name: D2_defrost_limit
+    min_value: -35
+    max_value: 45
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: D2_defrost_limit_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW D3_defrost_time :Type S_WORD on address: 771
+  - platform: modbus_controller
+    id: D3_defrost_time_writing
+    address: 771
+    register_type: holding
+    value_type: S_WORD
+    multiply: 10.0
+    internal: true  
+
+  - platform: template
+    id: D3_defrost_time
+    name: D3_defrost_time
+    min_value: 1
+    max_value: 240
+    step: 0.1
+    unit_of_measurement: s
+    device_class: duration
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: D3_defrost_time_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW D7_dripping_time :Type S_WORD on address: 772
+  - platform: modbus_controller
+    id: D7_dripping_time_writing
+    address: 772
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: D7_dripping_time
+    name: D7_dripping_time
+    min_value: 0
+    max_value: 10
+    step: 1
+    unit_of_measurement: s
+    device_class: duration
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: D7_dripping_time_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW F5_fan_pause :Type S_WORD on address: 773
+  - platform: modbus_controller
+    id: F5_fan_pause_writing
+    address: 773
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: F5_fan_pause
+    name: F5_fan_pause
+    min_value: 1
+    max_value: 10
+    step: 1
+    unit_of_measurement: s
+    device_class: duration
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: F5_fan_pause_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW F4_defrost_fan_state :Type S_WORD on address: 777
+  - platform: modbus_controller
+    id: F4_defrost_fan_state_writing
+    address: 777
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: F4_defrost_fan_state
+    name: F4_defrost_fan_state
+    min_value: 0
+    max_value: 1
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: F4_defrost_fan_state_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW DE_defrost_probe_enable :Type S_WORD on address: 778
+  - platform: modbus_controller
+    id: DE_defrost_probe_enable_writing
+    address: 778
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: DE_defrost_probe_enable
+    name: DE_defrost_probe_enable
+    min_value: 0
+    max_value: 1
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: DE_defrost_probe_enable_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW DPO_defrost_power_on :Type S_WORD on address: 779
+  - platform: modbus_controller
+    id: DPO_defrost_power_on_writing
+    address: 779
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: DPO_defrost_power_on
+    name: DPO_defrost_power_on
+    min_value: 0
+    max_value: 1
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: DPO_defrost_power_on_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW DSE_smart_defrost :Type S_WORD on address: 790
+  - platform: modbus_controller
+    id: DSE_smart_defrost_writing
+    address: 790
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: DSE_smart_defrost
+    name: DSE_smart_defrost
+    min_value: 0
+    max_value: 1
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: DSE_smart_defrost_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW DST_smart_defrost_temp :Type S_WORD on address: 790
+  - platform: modbus_controller
+    id: DST_smart_defrost_temp_writing
+    address: 790
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: DST_smart_defrost_temp
+    name: DST_smart_defrost_temp
+    min_value: -30
+    max_value: 30
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: DST_smart_defrost_temp_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW Turn_on_defrost :Type S_WORD on address: 1012
+  - platform: modbus_controller
+    id: Turn_on_defrost_writing
+    address: 1012
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: Turn_on_defrost
+    name: Turn_on_defrost
+    min_value: 0
+    max_value: 1
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: Turn_on_defrost_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW Input_1_setting :Type S_WORD on address: 514
+  - platform: modbus_controller
+    id: Input_1_setting_writing
+    address: 514
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: Input_1_setting
+    name: Input_1_setting
+    min_value: -8
+    max_value: 8
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: Input_1_setting_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW Input_2_setting :Type S_WORD on address: 515
+  - platform: modbus_controller
+    id: Input_2_setting_writing
+    address: 515
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: Input_2_setting
+    name: Input_2_setting
+    min_value: -8
+    max_value: 8
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: Input_2_setting_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW Aux_1_control :Type S_WORD on address: 516
+  - platform: modbus_controller
+    id: Aux_1_control_writing
+    address: 516
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: Aux_1_control
+    name: Aux_1_control
+    min_value: -6
+    max_value: 6
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: Aux_1_control_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW Aux_2_control :Type S_WORD on address: 517
+  - platform: modbus_controller
+    id: Aux_2_control_writing
+    address: 517
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: Aux_2_control
+    name: Aux_2_control
+    min_value: -6
+    max_value: 6
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: Aux_2_control_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW DQC_door_open :Type S_WORD on address: 782
+  - platform: modbus_controller
+    id: DQC_door_open_writing
+    address: 782
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: DQC_door_open
+    name: DQC_door_open
+    min_value: 0
+    max_value: 5
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: DQC_door_open_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW TDO_door_open :Type S_WORD on address: 783
+  - platform: modbus_controller
+    id: TDO_door_open_writing
+    address: 783
+    register_type: holding
+    value_type: S_WORD
+    multiply: 10.0
+    internal: true  
+
+  - platform: template
+    id: TDO_door_open
+    name: TDO_door_open
+    min_value: 0
+    max_value: 240
+    step: 0.1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: TDO_door_open_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW STA_Aux_temp :Type S_WORD on address: 788
+  - platform: modbus_controller
+    id: STA_Aux_temp_writing
+    address: 788
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: STA_Aux_temp
+    name: STA_Aux_temp
+    min_value: -45
+    max_value: 99
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: STA_Aux_temp_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW BEE_Buzzer_enable :Type S_WORD on address: 795
+  - platform: modbus_controller
+    id: BEE_Buzzer_enable_writing
+    address: 795
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: BEE_Buzzer_enable
+    name: BEE_Buzzer_enable
+    min_value: 0
+    max_value: 1
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: BEE_Buzzer_enable_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW F3_fan_state :Type S_WORD on address: 776
+  - platform: modbus_controller
+    id: F3_fan_state_writing
+    address: 776
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: F3_fan_state
+    name: F3_fan_state
+    min_value: 0
+    max_value: 2
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: F3_fan_state_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW FST_Fan_stop :Type S_WORD on address: 784
+  - platform: modbus_controller
+    id: FST_Fan_stop_writing
+    address: 784
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: FST_Fan_stop
+    name: FST_Fan_stop
+    min_value: -45
+    max_value: 99
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: FST_Fan_stop_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW FD_Fan_stop_diff :Type S_WORD on address: 787
+  - platform: modbus_controller
+    id: FD_Fan_stop_diff_writing
+    address: 787
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: FD_Fan_stop_diff
+    name: FD_Fan_stop_diff
+    min_value: 1
+    max_value: 10
+    step: 1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: FD_Fan_stop_diff_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW F6_fans_recir_on :Type S_WORD on address: 796
+  - platform: modbus_controller
+    id: F6_fans_recir_on_writing
+    address: 796
+    register_type: holding
+    value_type: S_WORD
+    multiply: 10.0
+    internal: true  
+
+  - platform: template
+    id: F6_fans_recir_on
+    name: F6_fans_recir_on
+    min_value: 1
+    max_value: 240
+    step: 0.1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: F6_fans_recir_on_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW F7_fans_recir_off :Type S_WORD on address: 797
+  - platform: modbus_controller
+    id: F7_fans_recir_off_writing
+    address: 797
+    register_type: holding
+    value_type: S_WORD
+    multiply: 10.0
+    internal: true  
+
+  - platform: template
+    id: F7_fans_recir_off
+    name: F7_fans_recir_off
+    min_value: 1
+    max_value: 240
+    step: 0.1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: F7_fans_recir_off_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW Setpoint :Type S_WORD on address: 797
+  - platform: modbus_controller
+    id: Setpoint_writing
+    address: 797
+    register_type: holding
+    value_type: S_WORD
+    multiply: 10.0
+    internal: true  
+
+  - platform: template
+    id: Setpoint
+    name: Setpoint
+    min_value: -45
+    max_value: 99
+    step: 0.1
+    unit_of_measurement: C
+    device_class: temperature
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: Setpoint_writing
+            value: !lambda 'return x;'  
+    
+     
+ 
+   # RW Turn_on_standby :Type S_WORD on address: 1535
+  - platform: modbus_controller
+    id: Turn_on_standby_writing
+    address: 1535
+    register_type: holding
+    value_type: S_WORD
+    multiply: 1.0
+    internal: true  
+
+  - platform: template
+    id: Turn_on_standby
+    name: Turn_on_standby
+    min_value: 0
+    max_value: 1
+    step: 1
+    unit_of_measurement: ""
+    device_class: ""
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: Turn_on_standby_writing
+            value: !lambda 'return x;'  
+    
+     
+ 

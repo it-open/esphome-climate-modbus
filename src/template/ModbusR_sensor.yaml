@@ -1,0 +1,12 @@
+  # RW {{varname}} :Type {{type}} on address: {{address}}
+  - platform: modbus_controller
+    name: "{{varname}}"
+    id: {{varname}}_reading
+    address: {{address}}
+    register_type: read
+    accuracy_decimals: {{decimals}}
+    value_type: {{type}}
+    filters:
+      - multiply: {{div}}
+    
+    

@@ -1,0 +1,15 @@
+  # RW {{varname}} :Type {{type}} on address: {{address}}
+  - platform: modbus_controller
+    name: "{{varname}}"
+    id: {{varname}}_reading
+    address: {{address}}
+    register_type: read
+    internal: true  
+    on_press:
+      then:
+        - switch.turn_on: {{varname}}
+    on_release:
+      then:
+        - switch.turn_off: {{varname}}
+ 
+

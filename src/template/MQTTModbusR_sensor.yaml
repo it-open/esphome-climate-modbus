@@ -1,0 +1,18 @@
+  # RW {{varname}} :Type {{type}} on address: {{address}}
+  - platform: modbus_controller
+    name: "{{varname}}"
+    id: {{varname}}
+    address: {{address}}
+    register_type: read
+    accuracy_decimals: {{decimals}}
+    value_type: {{type}}
+    filters:
+      - multiply: {{div}}
+    on_value: 
+      then:
+        - mqtt.publish:
+            topic: "{{deviceclass}}"
+            payload: !lambda |-
+              return to_string(id({{varname}}).state);
+    
+    

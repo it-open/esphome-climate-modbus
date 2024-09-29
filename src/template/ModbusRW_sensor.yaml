@@ -1,0 +1,17 @@
+  # RW {{varname}} :Type {{type}} on address: {{address}}
+  - platform: modbus_controller
+    name: "{{varname}}"
+    id: {{varname}}_reading
+    address: {{address}}
+    register_type: holding
+    value_type: {{type}}
+    filters:
+      - multiply: {{div}}
+    accuracy_decimals: {{decimals}}
+    internal: true  
+    on_value: 
+      then:
+        - number.set: 
+            id: {{varname}}
+            value: !lambda 'return x;' 
+    

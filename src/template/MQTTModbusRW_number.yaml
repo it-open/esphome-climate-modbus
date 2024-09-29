@@ -1,0 +1,26 @@
+   # RW {{varname}} :Type {{type}} on address: {{address}}
+  - platform: modbus_controller
+    id: {{varname}}_writing
+    address: {{address}}
+    register_type: holding
+    value_type: {{type}}
+    multiply: {{mul}}
+    internal: true  
+
+  - platform: template
+    id: {{varname}}
+    name: {{varname}}
+    min_value: {{min}}
+    max_value: {{max}}
+    step: {{div}}
+    unit_of_measurement: {{unit}}
+    device_class: {{deviceclass}}
+    optimistic: true
+    set_action:
+      then:
+        - number.set:
+            id: {{varname}}_writing
+            value: !lambda 'return x;'  
+    
+     
+ 

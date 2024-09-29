@@ -1,0 +1,20 @@
+  # RW {{varname}} :Type {{type}} on address: {{address}}
+  - platform: modbus_controller
+    name: "{{varname}}"
+    id: {{varname}}
+    address: {{address}}
+    register_type: read
+     on_press:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id({{varname}}).state);
+    on_release:
+      then:
+        - mqtt.publish:
+            topic: "switch"
+            payload: !lambda |-
+              return to_string(id({{varname}}).state);
+    
+
