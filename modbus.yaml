@@ -25,8 +25,8 @@ web_server:
 
 
 wifi:
-  ssid: SCHULLER2
-  password: schuller2
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
